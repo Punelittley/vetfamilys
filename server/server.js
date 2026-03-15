@@ -34,7 +34,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 connectDB();
 
-app.get('/*', (req, res) => {
+app.get('/:slug*', (req, res) => {
   res.sendFile(path.join(clientBuildPath, 'index.html'));
 });
 
